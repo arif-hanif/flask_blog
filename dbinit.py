@@ -11,6 +11,7 @@ try:
     conn = engine.connect()
     conn.execute("commit")
     conn.execute("CREATE DATABASE " + app.config['BLOG_DATABASE_NAME'])
+    conn.close()
 except:
     print "Database Exists"
     
